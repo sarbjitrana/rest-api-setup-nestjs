@@ -58,16 +58,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1. **User Signup**
+   - Endpoint: POST /users/signup
+   - Description: Creates a new user account.
+   - Implementation: Handle POST request, validate input, hash password, and save user data to the MySQL database.
 
-## Stay in touch
+2. **User Login**
+   - Endpoint: POST /users/login
+   - Description: Authenticates users and generates access tokens.
+   - Implementation: Handle POST request, validate user credentials, generate JWT (JSON Web Token) for authentication, and send it back in the response.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+3. **User Logout**
+   - Endpoint: POST /users/logout
+   - Description: Invalidates access tokens and logs users out.
+   - Implementation: You can manage token invalidation on the client side by simply deleting the access token stored in the client. The server doesn't need to do anything special for logout.
 
-## License
 
-Nest is [MIT licensed](LICENSE).
