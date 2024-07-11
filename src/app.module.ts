@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/entities/user.entity';
+import { ChatGateway } from './chat/chat.gateway';
+import { ChatModule } from './chat/chat.module';
 
 
 @Module({
@@ -16,8 +18,8 @@ import { User } from './user/entities/user.entity';
     database: 'nestjsrestapi',
     entities: [User],
     synchronize: true,
-  }),UserModule],
+  }),UserModule, ChatModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ChatGateway],
 })
 export class AppModule {}
